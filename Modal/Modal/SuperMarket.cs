@@ -13,6 +13,7 @@ namespace Modal.Modal
         Atacadao = 2,
         Sonda = 3,
         Extra = 4,
+        Outro =5
 
     }
 }
