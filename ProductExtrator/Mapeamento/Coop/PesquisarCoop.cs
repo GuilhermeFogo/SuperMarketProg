@@ -12,8 +12,8 @@ namespace ProductExtrator.Mapeamento.Coop
         private readonly IWebDriver _driver;
         private readonly IJavaScriptExecutor _js;
 
-        private IWebElement Campo_pesquisa => _driver.FindElement(By.ClassName("document.querySelector('.buttonCustomScroll')"));
-        private IWebElement Btn_pesquisar => _driver.FindElement(By.ClassName("document.querySelector('.vtex-store-components-3-x-searchBarIcon')"));
+        private IWebElement Campo_pesquisa => _driver.FindElement(By.XPath("/html/body/div[2]/div/div[1]/div/div[2]/div/div[1]/section/div/div[3]/div/div/div/div/div[1]/div/label/div/input"));
+        private IWebElement Btn_pesquisar => _driver.FindElement(By.XPath("/html/body/div[2]/div/div[1]/div/div[2]/div/div[1]/section/div/div[3]/div/div/div/div/div[2]/div/div/div/div/div/section/article/ol/li[1]/a"));
         public PesquisarCoop(IWebDriver driver)
         {
             _driver = driver;
@@ -23,7 +23,14 @@ namespace ProductExtrator.Mapeamento.Coop
         {
             Campo_pesquisa.Click();
             Campo_pesquisa.SendKeys(produto);
-            Btn_pesquisar.Click();
+            try
+            {
+                Btn_pesquisar.Click();
+            }
+            catch (Exception)
+            {
+                Campo_pesquisa.SendKeys(Keys.Enter);
+            }
         }
 
         public bool ExistCampoPesquisa()

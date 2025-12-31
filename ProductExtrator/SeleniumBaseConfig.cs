@@ -26,7 +26,7 @@ namespace ProductExtrator
             var options = new ChromeOptions();
 
             if (headless)
-                options.AddArgument("--headless=new");
+                //options.AddArgument("--headless=new");
 
             options.AddArgument("--disable-gpu");
             options.AddArgument("--no-sandbox");

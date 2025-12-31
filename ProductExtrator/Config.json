@@ -1,6 +1,9 @@
-﻿[
-  {
-    "Url": "https://www.coopsupermercado.com.br/",
-    "Nome": "Coop"
-  }
-]
+﻿{
+  "SuperMercados": [
+    {
+      "Nome": "Coop",
+      "Url": "https://www.coopsupermercado.com.br/"
+    }
+  ]
+}
+
