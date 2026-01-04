@@ -26,11 +26,13 @@ namespace ProductExtrator.Mapeamento.Coop
             try
             {
                 Btn_pesquisar.Click();
+                Campo_pesquisa.Clear();
             }
             catch (Exception)
             {
                 Campo_pesquisa.SendKeys(Keys.Enter);
             }
+            Campo_pesquisa.Clear();
         }
 
         public bool ExistCampoPesquisa()
